@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TestingLibrary;
 
 namespace UnitTestProject
@@ -6,6 +7,12 @@ namespace UnitTestProject
     [TestClass]
     public class TriangleTest
     {
+        [TestMethod]
+        public void ConstructorTest_InvalidArgs()
+        {
+            Assert.ThrowsException<ArgumentException>(() => new Triangle(1, 2));
+        }
+
         [TestMethod]
         public void Test_GetArea()
         {
